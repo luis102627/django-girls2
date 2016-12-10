@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<html>
+<head>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+   	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+   	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+   	<link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<header class = 'page-header'>
+		<h1> <a href="#">Django Girls Blog</a> </h1>
+	</header>
+
+	{% if identificador.id %}
+	<section>
+		<article class="post">
+			<h1>{{ identificador.titulo }}</h1>
+			<p>{{ identificador.contenido }}</p>
+		</article>
+	</section>
+	{% else %}
+		{{ identificador }}
+	{% endif %}
+
+</body>
+</html>
